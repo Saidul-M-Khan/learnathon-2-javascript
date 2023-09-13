@@ -78,7 +78,7 @@ const personData = {
   personAge,
   sayHello() {
     console.log(
-      `Hello, my name is ${this.name} and I'm ${this.age} years old.`
+      `Hello, my name is ${this.personName} and I'm ${this.personAge} years old.`
     );
   },
 };
