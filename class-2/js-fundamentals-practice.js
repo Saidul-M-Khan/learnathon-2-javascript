@@ -12,7 +12,7 @@ Practice for JS Fundamentals
 
 /* JS Variables and Types */
 // Declaring variables
-var age = 30;
+var agee = 30;
 let name = "John";
 const PI = 3.14;
 
@@ -20,7 +20,7 @@ const PI = 3.14;
 let isStudent = true;
 let hobbies = ["reading", "coding"];
 let person = { firstName: "Alice", lastName: "Smith" };
-console.log(typeof age);
+console.log(typeof agee);
 console.log(typeof name);
 console.log(typeof PI);
 console.log(typeof isStudent);
