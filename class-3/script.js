@@ -1,4 +1,4 @@
-const myParagraph = document.getElementById("my-paragraph");
+const myParagraph = document.querySelector("#my-paragraph");
 
 // Change the existing text
 const changeText = () => {
@@ -89,4 +89,32 @@ const createList = () => {
         list.appendChild(listItem);
     });
 };
+
+
+// Event Delegation
+const list = document.getElementById("itemList");
+
+list.addEventListener("click", function (event) {
+    if (event.target.tagName === "LI") {
+        alert("Clicked on " + event.target.textContent);
+    }
+});
+
+
+// Event Capturing and Bubbling
+const parent = document.getElementById("parent");
+const child = document.getElementById("child");
+const log = document.getElementById("log");
+
+parent.addEventListener("click", () => {
+    log.innerHTML += "<p>Parent Clicked - Bubbling Phase</p>";
+});
+
+child.addEventListener(
+    "click",
+    () => {
+        log.innerHTML += "<p>Child Clicked - Capturing Phase</p>";
+    },
+    true
+);
 

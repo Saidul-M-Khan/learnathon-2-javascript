@@ -1,84 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Class-3 Practice</title>
     <style>
-        #root {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-around;
-        }
-        #text-container {
-            margin: 20px 0;
-        }
-        #output {
-            border: 1px solid black;
-            padding: 25px;
-            margin: 20px 0;
-            width: 50%;
-            height: 25%;
-            overflow: auto;
-        }
-        #my-paragraph {
-            font-size: 20px;
-            font-weight: bold;
-        }
-        #btn-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        input[type="button"] {
-            margin: 5px 0;
+      #root {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+      }
+      #text-container {
+        border: 1px solid black;
+        margin: 20px 0;
+        padding: 25px;
+      }
+      #itemList {
+        border: 1px solid black;
+        margin: 20px 0;
+        padding: 25px;
+      }
+      #event-delegation {
+        border: 1px solid black;
+        margin: 20px 0;
+        padding: 25px;
+      }
+      #output {
+        border: 1px solid black;
+        padding: 25px;
+        margin: 20px 0;
+        width: 50%;
+        height: 25%;
+        overflow: auto;
+      }
+      #my-paragraph {
+        font-size: 20px;
+        font-weight: bold;
+      }
+      #btn-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      input[type="button"] {
+        margin: 5px 0;
 
-            background-color: white;
-            color: rgb(0, 0, 0);
-            border: 2px solid #5543e1;
-            border-radius: 8px;
-            padding: 5px 10px;
-        }
-        input[type="button"]:hover {
-            background-color: #5543e1;
-            color: white;
-            cursor: pointer;
-        }
+        background-color: white;
+        color: rgb(0, 0, 0);
+        border: 2px solid #5543e1;
+        border-radius: 8px;
+        padding: 5px 10px;
+      }
+      input[type="button"]:hover {
+        background-color: #5543e1;
+        color: white;
+        cursor: pointer;
+      }
+      .box {
+        width: 200px;
+        height: 100px;
+        background-color: #007bff;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+        margin: 20px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      #child {
+        background-color: #28a745;
+      }
+
+      #log {
+        margin-top: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h1 id="title">Dom & Storage Practice</h1>
     <div id="root">
-        <div id="output">
-            <div id="text-container">
-                <p id="my-paragraph">I am Saidul.</p>
-            </div>
-            <div id="itemList">
-    
-            </div>
+      <div id="output">
+        <div id="text-container">
+          <p id="my-paragraph">I am Saidul.</p>
         </div>
-        <div id="btn-container">
-            <input id="change-text-btn" type="button" value="Change Text" onclick="changeText()">
-            <input id="add-text-btn" type="button" value="Add Text" onclick="addText()">
-            <input id="remove-text-btn" type="button" value="Remove Text" onclick="removeText()">
-            <input id="add-style-text-btn" type="button" value="Add Text Style" onclick="styleText()">
-
-            <input id="remove-style-text-btn" type="button" value="Remove Text Style" onclick="removeStyle()">
-            <input id="add-class-btn" type="button" value="Add Class To The Text" onclick="addClass()">
-            <input id="remove-class-btn" type="button" value="Remove Class From The Text" onclick="removeClass()">
-           
-            <input id="add-attribute-btn" type="button" value="Add Attribute" onclick="addAttribute()">
-
-            <input id="remove-attribute-btn" type="button" value="Remove Attribute" onclick="removeAttribute()">
-            
-            
-            <input id="create-list-btn" type="button" value="Create List of items based on array" onclick="createList()">
-
-            
+        <div id="itemList">
+          <small
+            >Dynamic List and Event Delegation Example (Click on Items to see
+            event Delegation):</small
+          >
         </div>
+        <div id="event-delegation">
+          <!-- Event Capturing and Bubbling Example -->
+            <small>Event Capturing and Bubbling Example:</small>
+          <div id="parent" class="box">
+            Parent Box (Click Me)
+            <div id="child" class="box">Child Box (Click Me)</div>
+          </div>
+          <div id="log"></div>
+        </div>
+      </div>
+      <div id="btn-container">
+        <input
+          id="change-text-btn"
+          type="button"
+          value="Change Text"
+          onclick="changeText()"
+        />
+        <input
+          id="add-text-btn"
+          type="button"
+          value="Add Text"
+          onclick="addText()"
+        />
+        <input
+          id="remove-text-btn"
+          type="button"
+          value="Remove Text"
+          onclick="removeText()"
+        />
+        <input
+          id="add-style-text-btn"
+          type="button"
+          value="Add Text Style"
+          onclick="styleText()"
+        />
+
+        <input
+          id="remove-style-text-btn"
+          type="button"
+          value="Remove Text Style"
+          onclick="removeStyle()"
+        />
+        <input
+          id="add-class-btn"
+          type="button"
+          value="Add Class To The Text"
+          onclick="addClass()"
+        />
+        <input
+          id="remove-class-btn"
+          type="button"
+          value="Remove Class From The Text"
+          onclick="removeClass()"
+        />
+
+        <input
+          id="add-attribute-btn"
+          type="button"
+          value="Add Attribute"
+          onclick="addAttribute()"
+        />
+
+        <input
+          id="remove-attribute-btn"
+          type="button"
+          value="Remove Attribute"
+          onclick="removeAttribute()"
+        />
+
+        <input
+          id="create-list-btn"
+          type="button"
+          value="Create List of items based on array"
+          onclick="createList()"
+        />
+      </div>
     </div>
 
     <script src="./script.js"></script>
-</body>
+  </body>
 </html>

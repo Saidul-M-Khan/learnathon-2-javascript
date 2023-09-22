@@ -1,24 +1,33 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const loginForm = document.getElementById("loginForm");
-    const messageDiv = document.getElementById("message");
-    const loginInfo = {username: "saidul", password: "1234"}
+document.addEventListener("DOMContentLoaded", function () {
+  const loginForm = document.getElementById("loginForm");
+  const messageDiv = document.getElementById("message");
+  const loginInfo = { username: "saidul", password: "1234" };
 
-    loginForm.addEventListener("submit", function(event) {
-        event.preventDefault(); // Prevent the default form submission
+  // Store The Username To Local Storage (for demo purpose)
+  localStorage.setItem("username", loginInfo["username"]);
+  const storedUsername = localStorage.getItem("username");
 
-        const usernameInput = document.getElementById("username");
-        const passwordInput = document.getElementById("password");
+  // Store The Password To Session Storage (for demo purpose)
+  sessionStorage.setItem("password", loginInfo["password"]);
+  const storedPassword = sessionStorage.getItem("password");
 
-        const username = usernameInput.value;
-        const password = passwordInput.value;
+  loginForm.addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent the default form submission
 
-        // You can implement your custom validation logic here
-        if (username === loginInfo['username'] && password === loginInfo['password']) {
-            messageDiv.textContent = "Login successful!";
-            messageDiv.style.color = "green";
-        } else {
-            messageDiv.textContent = "Invalid username or password. Please try again.";
-            messageDiv.style.color = "red";
-        }
-    });
+    const usernameInput = document.getElementById("username");
+    const passwordInput = document.getElementById("password");
+
+    const username = usernameInput.value;
+    const password = passwordInput.value;
+
+    // You can implement your custom validation logic here
+    if (username === storedUsername && password === storedPassword) {
+      messageDiv.textContent = "Login successful!";
+      messageDiv.style.color = "green";
+    } else {
+      messageDiv.textContent =
+        "Invalid username or password. Please try again.";
+      messageDiv.style.color = "red";
+    }
+  });
 });
