@@ -11,7 +11,6 @@ Promise.all([promise1, promise2])
     .then((response) => {
         console.log("\nPromise.all example:");
         console.log(response); // Returns an array of all the fulfilled values
-        
     });
 
 // Promise.any example
@@ -27,3 +26,4 @@ Promise.race([promise1, promise2])
         console.log("\nPromise.race example:");
         console.log(response); // Returns the first resolved promise
     });
+
